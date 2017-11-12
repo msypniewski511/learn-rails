@@ -5,57 +5,54 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+ruby '2.4.2'
 gem 'rails', '~> 5.1.4'
-gem 'sqlite3'
+# Rails defaults
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
-gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'therubyracer', platforms: :ruby
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-#gem "activerecord-tableless", "~> 2.4"
-gem "figaro"
-gem 'gibbon'
-gem 'google_drive'
-gem 'high_voltage'
-gem 'simple_form'
-gem 'compass-rails'
-gem 'foundation-rails'
-#gem 'quiet_assets', group: :development
-
-
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  #Byebug is a simple to use, feature rich debugger for Ruby.
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
+  #Capybara is an integration testing tool for rack based web applications.
+  #It simulates how a user would interact with a website
   gem 'capybara', '~> 2.13'
+  # WebDriver is a tool for writing automated tests of websites.
   gem 'selenium-webdriver'
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem 'rails_layout'
 end
-
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  # debugging tool for your Ruby on Rails applications.
   gem 'web-console', '>= 3.3.0'
+  # The Listen gem listens to file modifications
+  # and notifies you about the changes.
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Preloads your application so things like console, rake and tests run faster
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  #gem 'quiet_assets'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-ruby '2.4.2'
+# learn-rails
+gem 'bootstrap-sass'
+# A wrapper for MailChimp API 3.0 and Export API
+gem 'gibbon'
+# Easily include static pages in your Rails app.
+gem 'high_voltage'
+gem 'jquery-rails'
+group :development do
+  # Provides a better error page for Rails and other Rack apps.
+  gem 'better_errors'
+  # Generates Rails application layout files for use with various front-end frameworks.
+  gem 'rails_layout'
+end
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
+group :test do
+  gem 'minitest-spec-rails'
+end
