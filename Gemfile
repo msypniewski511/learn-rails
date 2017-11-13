@@ -35,10 +35,12 @@ group :development do
 end
 
 # learn-rails
+gem "figaro"
 gem 'bootstrap-sass'
 # A wrapper for MailChimp API 3.0 and Export API
 gem 'gibbon'
 # Easily include static pages in your Rails app.
+#gem "figaro"
 gem 'high_voltage'
 gem 'jquery-rails'
 group :development do
