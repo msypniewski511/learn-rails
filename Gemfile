@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem "haml-rails"
 group :development, :test do
   #Byebug is a simple to use, feature rich debugger for Ruby.
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -46,6 +47,7 @@ gem 'jquery-rails'
 group :development do
   # Provides a better error page for Rails and other Rack apps.
   gem 'better_errors'
+  gem "binding_of_caller"
   # Generates Rails application layout files for use with various front-end frameworks.
   gem 'rails_layout'
 end
