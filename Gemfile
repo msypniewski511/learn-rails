@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "haml-rails"
+gem 'rainbow'
 group :development, :test do
   #Byebug is a simple to use, feature rich debugger for Ruby.
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

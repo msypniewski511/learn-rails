@@ -1,7 +1,9 @@
 %h3 Home
 %p
+  #{Rails.logger.debug 'DEBUG: '.background(:red) + 'View name'}
   Welcome to the home of #{@owner.name}.
 %p
+  #{Rails.logger.debug 'DEBUG: '.background(:red) + 'View birthdate'}
   I was born on #{@owner.birthdate}.
 %p
   Only #{@owner.countdown}. days until my birthday!
