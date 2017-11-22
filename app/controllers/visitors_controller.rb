@@ -4,8 +4,6 @@ class VisitorsController < ApplicationController
   def new
     Rails.logger.debug 'DEBUG: '.background(:blue) +  ' entering the new method'
     @owner = Owner.new
-    flash.now[:notice] = 'Welcome!'
-    flash.now[:alert] = 'My birthday is soon.'
     Rails.logger.debug 'DEBUG: '.background(:blue) + ' Owner name is ' + Rainbow(@owner.name).background(:red).bright
     #raise 'Deliberate Failure'.color(:red)
   end

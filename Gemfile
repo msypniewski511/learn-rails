@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "haml-rails"
 gem 'rainbow'
+gem 'simple_form'
 group :development, :test do
   #Byebug is a simple to use, feature rich debugger for Ruby.
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -38,7 +39,7 @@ end
 
 # learn-rails
 gem "figaro"
-gem 'bootstrap-sass'
+gem 'foundation-rails'
 # A wrapper for MailChimp API 3.0 and Export API
 gem 'gibbon'
 # Easily include static pages in your Rails app.
