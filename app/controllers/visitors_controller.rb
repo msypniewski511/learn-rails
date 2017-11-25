@@ -9,7 +9,7 @@ class VisitorsController < ApplicationController
   end
 
   def colekcja
-    @kols = 1..100
+    @kols = 1..15
   end
 
 end
