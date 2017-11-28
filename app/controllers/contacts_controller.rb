@@ -8,13 +8,17 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(secure_params)
     if @contact.valid?
-      # TODO save date
-      # TODO send message
-      flash[:notice] = "Mesage sent from #{@contact.name}"
-      redirect_to root_path
+    @contact.update_spreadsheet
+    # TODO send message
+    flash[:notice] = "Message sent from #{@contact.name}."
+    redirect_to root_path
     else
-      render :new
+    render :new
     end
+  end
+
+  def show
+    @wynik = Moj.wynik()
   end
 
 

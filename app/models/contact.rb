@@ -20,6 +20,28 @@ class Contact
     #end
   end
 
+  def update_spreadsheet
+    session = GoogleDrive::Session.from_service_account_key("config/Learn-Rails-Example-de5c615eefa6.json")
+
+    #ss = session.spreadsheet_by_key("Learn-Rails-Example")
+    ss = session.spreadsheet_by_title('Learn-Rails-Example')
+    if ss.nil?
+      ss = session.create_spreadsheet('Learn-Rails-Example')
+    end
+    ws = ss.worksheets[0]
+    last_row = 1 + ws.num_rows
+    ws[last_row, 1] = Time.new
+    ws[last_row, 2] = self.name
+    ws[last_row, 3] = self.email
+    ws[last_row, 4] = self.content
+    ws.save
+  end
+
+  def wynik
+    #session = GoogleDrive::Session.from_service_account_key("config/Learn-Rails-Example-de5c615eefa6.json")
+    #session.files
+  end
+
   def persisted?
     false
   end

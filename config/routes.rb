@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   post 'contact', to: 'contacts#process_form'
   get '/colekcja', to: 'visitors#colekcja'
+  get '/show_spreadsheet', to: 'contacts#show'
 end

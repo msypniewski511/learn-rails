@@ -48,6 +48,7 @@ gem 'gibbon'
 #gem "figaro"
 gem 'high_voltage'
 gem 'jquery-rails'
+gem 'google_drive', '~> 2.1', '>= 2.1.7'
 group :development do
   # Provides a better error page for Rails and other Rack apps.
   gem 'better_errors'
@@ -59,7 +60,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+
+
 end
 group :test do
   gem 'minitest-spec-rails'
