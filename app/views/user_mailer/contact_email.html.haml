@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html", charset: "UTF-8"}
+  %body
+    %h1
+      Website Content
+    %p
+      This visitor requested contact:
+    %p
+      = @contact.name
+      %br
+      = @contact.email
+    %p
+      The visitor said:
+    %p
+      = @contact.content
