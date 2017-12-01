@@ -1,15 +1,21 @@
 class VisitorsController < ApplicationController
-  require 'rainbow/ext/string'
-
   def new
-    Rails.logger.debug 'DEBUG: '.background(:blue) +  ' entering the new method'
-    @owner = Owner.new
-    Rails.logger.debug 'DEBUG: '.background(:blue) + ' Owner name is ' + Rainbow(@owner.name).background(:red).bright
-    #raise 'Deliberate Failure'.color(:red)
+    @visitor = Visitor.new
   end
 
-  def colekcja
-    @kols = 1..15
+  def create
+    @visitor = Visitor.new(secure_params)
+    if @visitor.valid?
+      @visitor.subscribe
+      flash[:notice] = "Signed up #{@visitor.email}."
+      redirect_to root_path
+    else
+      render :new
+    end
   end
+  private
+    def secure_params
+      params.require(:visitor).permit(:email)
+    end
 
 end
